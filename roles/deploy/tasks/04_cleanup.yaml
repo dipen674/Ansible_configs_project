@@ -8,7 +8,7 @@
 
 - name: Remove old versioned images
   community.docker.docker_image:
-    name: "harbor.registry.local/java_app/taskmanager:V_{{ item }}"
+    name: "{{ IMAGE }}:V_{{ item }}"
     state: absent
   loop: "{{ old_builds }}"
   loop_control:
